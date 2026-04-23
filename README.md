@@ -134,3 +134,80 @@ it works everywhere.
 
 *"Layer 8 is the human layer. We're building the AI that sits between
 the human and the network."*
+## Models
+
+| Model | Base | Training Data | Status |
+|-------|------|---------------|--------|
+| RFC-Qwen2.5-14B | Qwen2.5-14B-Instruct | 9,740 IETF RFCs | 🔄 Training |
+| Juniper-14B | RFC-Qwen2.5-14B | Juniper TechLibrary | 📋 Planned |
+| Cisco-14B | RFC-Qwen2.5-14B | Cisco Documentation | 📋 Planned |
+| Nokia-14B | RFC-Qwen2.5-14B | Nokia Documentation | 📋 Planned |
+| BGP-Agent | RFC-Qwen2.5-14B | BGP RFCs + NANOG | 📋 Planned |
+| Error-Analyzer | All above | Syslog + TAC cases | 📋 Planned |
+
+## Hugging Face
+
+Models published at [LayerEight on Hugging Face](https://huggingface.co/LayerEight)
+
+## Hardware
+
+- **GPU**: AMD Radeon RX 9070 XT (16GB VRAM)
+- **Framework**: PyTorch 2.11.0 + ROCm 7.2
+- **Training**: QLoRA 4-bit via bitsandbytes
+- **Platform**: WSL2 on Windows 11
+
+If it runs on a 9070 XT it runs on anything.
+
+## Use Cases
+
+**For IXP Operators:**
+- Route server configuration generation
+- Peering policy validation
+- BGP community planning
+- RFC 7454 compliance checking
+
+**For ISPs:**
+- Transit routing configuration
+- Customer BGP session templates
+- MPLS traffic engineering
+
+**For Network Engineers:**
+- Paste syslog error → get RFC-cited diagnosis
+- Describe your network → get deployable config
+- Upload config → get compliance report
+
+**For Students:**
+- RFC-grounded protocol explanations
+- CCNA/CCNP/JNCIA study help
+- Real standard citations
+
+## Roadmap
+
+- [x] Phase 1: RFC Foundation Model
+- [ ] Phase 2: Juniper Equipment Model
+- [ ] Phase 3: Cisco Equipment Model
+- [ ] Phase 4: BGP Protocol Specialist
+- [ ] Phase 5: Error Analyzer Agent
+- [ ] Phase 6: Config Generator
+- [ ] Phase 7: Real-time Network Monitor
+- [ ] Phase 8: Full LayerEight Orchestrator
+
+## Contributing
+
+- Training data (anonymized configs, error logs)
+- RFC dataset improvements
+- Vendor documentation datasets
+- Testing and validation
+
+## License
+
+Apache 2.0
+
+## About
+
+Built by a network infrastructure developer in Jeffersonville, Indiana.
+Trained on AMD RDNA4 hardware because if it works on the hard platform,
+it works everywhere.
+
+*"Layer 8 is the human layer. We're building the AI that sits between
+the human and the network."*
