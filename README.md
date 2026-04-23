@@ -20,120 +20,19 @@ Existing tools are either vendor-locked, expensive, or not grounded in RFC truth
 
 ## The Solution
 
-A layered AI platform where every agent traces its knowledge back to RFC ground truth:
-LayerEight Platform
-│
-├── RFC Foundation Model ← Qwen2.5-14B trained on 9,740 RFCs
-│   Every internet standard from 1969 to present
-│
-├── Equipment Agents (in development)
-│   ├── Juniper MX/QFX/PTX
-│   ├── Cisco ASR/NCS/Nexus
-│   ├── Nokia 7750 SR
-│   ├── Arista 7500/7800
-│   └── MikroTik CCR/CRS
-│
-├── Protocol Agents (planned)
-│   ├── BGP Specialist
-│   ├── OSPF/IS-IS Specialist
-│   ├── MPLS/Segment Routing
-│   └── Network Security
-│
-├── Operations Agents (planned)
-│   ├── Error Analyzer — paste syslog, get RFC-cited diagnosis
-│   ├── Config Generator — input parameters, get deployable config
-│   ├── Config Validator — upload config, get RFC compliance report
-│   └── Change Manager — predict impact before you deploy
-│
-└── Monitoring Agents (planned)
-├── Real-time gNMI telemetry analysis
-├── BGP hijack detection
-├── Autonomous RFC compliance checking
-└── Self-optimizing network management
+A layered AI platform where every agent traces its knowledge back to RFC ground truth.
 
-## Models
+**Layer 1 — RFC Foundation Model** — training now on 9,740 IETF RFCs from 1969 to present. The ground truth everything else builds on.
 
-| Model | Base | Training Data | Status |
-|-------|------|---------------|--------|
-| RFC-Qwen2.5-14B | Qwen2.5-14B-Instruct | 9,740 IETF RFCs | 🔄 Training |
-| Juniper-14B | RFC-Qwen2.5-14B | Juniper TechLibrary | 📋 Planned |
-| Cisco-14B | RFC-Qwen2.5-14B | Cisco Documentation | 📋 Planned |
-| Nokia-14B | RFC-Qwen2.5-14B | Nokia Documentation | 📋 Planned |
-| BGP-Agent | RFC-Qwen2.5-14B | BGP RFCs + NANOG | 📋 Planned |
-| Error-Analyzer | All above | Syslog + TAC cases | 📋 Planned |
+**Layer 2 — Equipment Agents** — vendor specific models built on top of the RFC foundation. Juniper, Cisco, Nokia, Arista, MikroTik.
 
-## Hugging Face
+**Layer 3 — Protocol Agents** — BGP specialist, OSPF/IS-IS specialist, MPLS/Segment Routing, Network Security.
 
-Models are published at [LayerEight on Hugging Face](https://huggingface.co/LayerEight)
+**Layer 4 — Operations Agents** — Error Analyzer, Config Generator, Config Validator, Change Manager.
 
-## Hardware
+**Layer 5 — Monitoring Agents** — real time gNMI telemetry, BGP hijack detection, autonomous RFC compliance, self optimizing network management.
 
-This project proves that serious AI training is possible on consumer AMD hardware:
-
-- **GPU**: AMD Radeon RX 9070 XT (16GB VRAM)
-- **Framework**: PyTorch 2.11.0 + ROCm 7.2
-- **Training**: QLoRA 4-bit quantization via bitsandbytes
-- **Platform**: WSL2 on Windows 11
-
-If it runs on a 9070 XT it runs on anything.
-
-## Use Cases
-
-**For IXP Operators:**
-- Route server configuration generation
-- Peering policy validation
-- BGP community planning
-- RFC 7454 (BGP Operations and Security) compliance checking
-
-**For ISPs:**
-- Transit routing configuration
-- Customer BGP session templates
-- IP address management
-- MPLS traffic engineering
-
-**For Network Engineers:**
-- Paste a syslog error → get RFC-cited diagnosis
-- Describe your network → get deployable config
-- Upload existing config → get compliance report
-
-**For Students:**
-- RFC-grounded explanations of every protocol
-- CCNA/CCNP/JNCIA study assistance
-- Lab configuration help
-- Real standard citations not just exam dumps
-
-## Roadmap
-
-- [x] Phase 1: RFC Foundation Model (training now)
-- [ ] Phase 2: Juniper Equipment Model
-- [ ] Phase 3: Cisco Equipment Model  
-- [ ] Phase 4: BGP Protocol Specialist
-- [ ] Phase 5: Error Analyzer Agent
-- [ ] Phase 6: Config Generator
-- [ ] Phase 7: Real-time Network Monitor
-- [ ] Phase 8: Full Orchestrator — unified LayerEight platform
-
-## Contributing
-
-This project welcomes contributions from the networking community:
-- Training data (anonymized configs, error logs)
-- RFC dataset improvements
-- Vendor documentation datasets
-- Testing and validation
-- Documentation
-
-## License
-
-Apache 2.0 — open source, free to use, free to build on.
-
-## About
-
-Built by a network infrastructure developer in Jeffersonville, Indiana.
-Trained on AMD RDNA4 hardware because if it works on the hard platform,
-it works everywhere.
-
-*"Layer 8 is the human layer. We're building the AI that sits between
-the human and the network."*
+**Layer 6 — Orchestrator** — unified interface that routes to all agents and combines answers into single RFC-cited responses.
 ## Models
 
 | Model | Base | Training Data | Status |
@@ -157,29 +56,28 @@ Models published at [LayerEight on Hugging Face](https://huggingface.co/LayerEig
 - **Platform**: WSL2 on Windows 11
 
 If it runs on a 9070 XT it runs on anything.
-
 ## Use Cases
 
-**For IXP Operators:**
+**For IXP Operators**
 - Route server configuration generation
 - Peering policy validation
 - BGP community planning
 - RFC 7454 compliance checking
 
-**For ISPs:**
+**For ISPs**
 - Transit routing configuration
 - Customer BGP session templates
 - MPLS traffic engineering
 
-**For Network Engineers:**
-- Paste syslog error → get RFC-cited diagnosis
-- Describe your network → get deployable config
-- Upload config → get compliance report
+**For Network Engineers**
+- Paste syslog error and get RFC-cited diagnosis
+- Describe your network and get deployable config
+- Upload config and get compliance report
 
-**For Students:**
+**For Students**
 - RFC-grounded protocol explanations
 - CCNA/CCNP/JNCIA study help
-- Real standard citations
+- Real standard citations not exam dumps
 
 ## Roadmap
 
@@ -206,8 +104,6 @@ Apache 2.0
 ## About
 
 Built by a network infrastructure developer in Jeffersonville, Indiana.
-Trained on AMD RDNA4 hardware because if it works on the hard platform,
-it works everywhere.
+Trained on AMD RDNA4 hardware because if it works on the hard platform it works everywhere.
 
-*"Layer 8 is the human layer. We're building the AI that sits between
-the human and the network."*
+*"Layer 8 is the human layer. We're building the AI that sits between the human and the network."*
